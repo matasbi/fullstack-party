@@ -1,0 +1,13 @@
+body {
+  display: flex;
+  align-items: center;
+}
+
+#root {
+  max-width: 400px;
+  padding: 15px;
+}
+
+.Login-logo {
+  margin-bottom: 60px;
+}
