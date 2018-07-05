@@ -1,0 +1,8 @@
+.btn.LoginButton {
+    color: #fff;
+}
+
+.btn.LoginButton:hover {
+    color: #fff;
+    background-color: 86b300;
+}

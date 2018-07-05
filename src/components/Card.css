@@ -1,0 +1,17 @@
+.Card-left {
+    width: 25px;
+}
+
+.Card-description {
+    font-size: 13px;
+    color: #bfbfbf;
+}
+
+.Card-chat {
+    font-size: 12px;
+    color: #999999;
+}
+
+.Card-label {
+    background: yellow;
+}

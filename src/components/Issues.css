@@ -1,0 +1,54 @@
+.Issues-scroll {
+  height: calc(100vh - 152px);
+  overflow-y: scroll;
+}
+
+.Issues-rightcol {
+  height: calc(100vh - 81px);
+  color: #ffffff;
+}
+
+.Issues-rightcol .background {
+  background: url(/img/issues-bg.jpg) no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+  z-index: -1;
+}
+
+.Issues .pagination {
+  font-size: 10pt;
+  margin: 10px;
+}
+
+.Issues .page-link {
+  border: 0;
+  width: 35px;
+  height: 35px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 35px;
+  padding: 0;
+  margin-left: 5px;
+  margin-right: 5px;
+  color: #000000;
+}
+
+.Issues .page-item.active .page-link, .page-item:hover .page-link {
+  background-color: #99cc33;
+  color: #ffffff;
+}
+
+.Issues .page-item .page-link-nav {
+  line-height: 35px;
+  color: #9fd533 !important;
+}

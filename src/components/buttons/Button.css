@@ -1,0 +1,28 @@
+button.Button {
+  color: #000000;
+  font-size: 10pt;
+}
+
+button.Button:hover, button.Button:focus {
+  text-decoration: none;
+}
+
+button.Button:hover, {
+  color: #99cc33;
+}
+
+button.Button.active {
+  color: #000000;
+}
+
+button.Button.inactive {
+  color: #9c9c9c;
+}
+
+button.Button.active:hover {
+  color: #99cc33;
+}
+
+button.Button.inactive:hover {
+  color: #99cc33;
+}
