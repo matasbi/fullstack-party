@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
-// import Login from './components/Login';
-import Item from './components/Item';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Login from './components/Login';
+import Issues from './components/Issues';
+import Issue from './components/Issue';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Item />
-      </div>
+      <BrowserRouter>
+        <span>
+          <Route exact path="/" component={Login} />
+          <Route path="/issues/:repoState?/:page?" component={Issues} />
+          <Route path="/issue/:number" component={Issue} />
+        </span>
+      </BrowserRouter>
     );
   }
 }

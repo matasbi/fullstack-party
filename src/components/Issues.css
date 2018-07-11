@@ -1,14 +1,14 @@
-.Issues-scroll {
+.Issues .Issues-scroll {
   height: calc(100vh - 152px);
   overflow-y: scroll;
 }
 
-.Issues-rightcol {
+.Issues .Issues-rightcol {
   height: calc(100vh - 81px);
   color: #ffffff;
 }
 
-.Issues-rightcol .background {
+.Issues .Issues-rightcol .background {
   background: url(/img/issues-bg.jpg) no-repeat center center; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -43,7 +43,8 @@
   color: #000000;
 }
 
-.Issues .page-item.active .page-link, .page-item:hover .page-link {
+.Issues .page-item.active .page-link,
+.Issues .page-item:hover .page-link {
   background-color: #99cc33;
   color: #ffffff;
 }
@@ -51,4 +52,17 @@
 .Issues .page-item .page-link-nav {
   line-height: 35px;
   color: #9fd533 !important;
+}
+
+.Issues a.page-link-nav {
+  cursor: pointer;
+}
+
+.Issues li.page-item:hover {
+  color: #ffffff;
+}
+
+.Issues .Issues-nav-btn:hover {
+  text-decoration: underline;
+  color: #99cc33;
 }

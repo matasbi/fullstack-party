@@ -6,4 +6,6 @@ $theme-colors: (
     "primary": #9fd533
 );
 
+$yiq-contrasted-threshold: 180;
+
 @import "node_modules/bootstrap/scss/bootstrap";

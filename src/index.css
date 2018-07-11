@@ -1,29 +1,5 @@
 html,
-body {
-  height: 100%;
-}
-
-body {
-  min-width: 320px;
-}
-
+body,
 #root {
-  margin: auto;
-  width: 100%;
-  display: block;
-}
-
-#background {
-  background: url(/img/login-bg.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  position: absolute;
-  width: 100%;
-  min-width: 320px;
   height: 100%;
-  opacity: 0.2;
-  filter: alpha(opacity=20);
-  z-index: -1;
 }

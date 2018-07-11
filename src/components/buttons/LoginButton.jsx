@@ -3,9 +3,13 @@ import { Button } from 'reactstrap';
 import './LoginButton.css';
 
 class LoginButton extends Component {
+    handleLogin() {
+        window.location = `https://github.com/login/oauth/authorize?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}`;
+    }
+
     render() {
         return (
-            <Button href={`https://github.com/login/oauth/authorize?scope=user:email&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}`} color="primary" className="LoginButton btn-block">Login With GitHub</Button>
+            <Button className="LoginButton btn-block" color="primary" onClick={this.handleLogin}>Login With GitHub</Button>
         );
     }
 }

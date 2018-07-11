@@ -8,18 +8,20 @@ class Button extends Component {
 
         this.state = {
             'icon': props.icon || null,
-            'title': props.title || '',
             'color': props.color || 'link',
-            'isActive': props.isActive || '1',
-            'disabled': props.disabled || false
+            'activityStatus': props.activityStatus || null,
+            'disabled': props.disabled || false,
+            'onClick': props.onClick || null,
+            'className': props.className || null,
         }
     }
 
     render() {
-        const { icon, title, color, isActive, disabled} = this.state;
+        const { title } = this.props;
+        const { icon, color, activityStatus, disabled, onClick, className } = this.state;
 
         return (
-            <RSButton color={color} className={`Button ${isActive === '1' ? 'active' : 'inactive'}`} disabled={disabled ? 'disabled' : ''}>
+            <RSButton color={color} onClick={onClick} className={`Button ${className ? className : ''} ${activityStatus === 'active' ? 'active' : ''} ${activityStatus === 'inactive' ? 'inactive' : ''}`} disabled={disabled}>
                 {icon && 
                     <img className="Button-icon mr-2" src={`/img/icons/${icon}.png`} alt={title} />
                 }{title}

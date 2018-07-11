@@ -1,41 +1,48 @@
 import React, { Component } from 'react';
 import { Card as RCard } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import ta from 'time-ago';
 import './Card.css';
 
 class Card extends Component {
 
-  getDays() {
-    const { issue } = this.props;
-    const today = new Date();
-    const createdOn = new Date(issue.created_at);
-    const msInDay = 24 * 60 * 60 * 1000;
-
-    createdOn.setHours(0, 0, 0, 0);
-    today.setHours(0, 0, 0, 0)
-
-    return Math.ceil((+today - +createdOn) / msInDay)
+  renderBadgeColor(badgeName) {
+    switch (badgeName) {
+      case 'Bug':
+        return 'badge-danger'
+      case 'Deprecation':
+        return 'badge-warning'
+      case 'Unconfirmed':
+        return 'badge-dark'
+      default:
+        return 'badge-info';
+    }
   }
 
   render() {
     const { issue } = this.props;
 
     return (
-      <RCard className="m-3 p-3">
+      <RCard className="Card m-3 p-3">
         <div className="row">
-          <div className="col p-2 text-center"><img src="/img/icons/exclamation.png" alt="exclamation" /></div>
-          <div className="col-10 col-sm-9 col-md-9 p-2">
-            <div className="Card-title">{issue.title}
-            {issue.labels.map((label, i) => (
-                <div key={i} className="Card-badge badge ml-1 badge-danger">{label.name}</div>
-            ))}
+          <div className="col text-center">{(issue.state === 'open' && <img src="/img/icons/exclamation.png" alt="open" />
+          ) || (
+            <img src="/img/icons/closed.png" alt="closed" />
+          )}</div>
+          <div className="col-10 col-sm-9 col-md-9">
+            <div className="Card-title-row">
+              <Link to={`/issue/${issue.number}`} className="Card-title">{issue.title}</Link>
+              <div className="Card-badges d-inline">
+              {issue.labels.map((label, i) => (
+                  <div key={i} className={`Card-badge badge ml-1 ${this.renderBadgeColor(label.name)}`}>{label.name}</div>
+              ))}
+              </div>
             </div>
-            <div className="Card-description">#{issue.number} opened {this.getDays()} days ago by <a href="">{issue.user.login}</a></div>
+            <div className="Card-description">#{issue.number} opened {ta.ago(issue.created_at)} by <a href={`http://github.com/${issue.user.login}`}target="_blank">{issue.user.login}</a></div>
           </div>
           <div className="col-2 d-none d-sm-block text-center">
           {issue.comments > 0 && (
-            <span className="Card-chat">
-              <img src="/img/icons/chat.png" alt="Chat" /> {issue.comments}
-            </span>
+            <Link to={`/issue/${issue.number}`} className="Card-chat"><img src="/img/icons/chat.png" alt="Chat" /><span className="ml-1">{issue.comments}</span></Link>
           )}
           </div>
         </div>

@@ -1,10 +1,9 @@
-FROM node:9.2.1
+FROM node:10
 
 ENV NPM_CONFIG_LOGLEVEL warn
 
 RUN  npm install -g yarn \
-    && yarn global add create-react-app \
-    && yarn global add npm-run-all
+    && yarn global add create-react-app npm-run-all
 
 WORKDIR /var/www/html
 

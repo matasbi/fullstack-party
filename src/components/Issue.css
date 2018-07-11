@@ -1,0 +1,45 @@
+.Issue {
+  background-color: #F5F5F5 !important;
+  min-height: 100%;
+}
+
+.Issue .Issue-back:hover {
+  text-decoration: underline;
+}
+
+.Issue .Issue-hcard {
+  padding-top: 35px;
+  padding-bottom: 30px;
+}
+
+.Issue-description {
+  font-size: 13px;
+  color: #bfbfbf;
+}
+
+.Issue .Issue-section {
+  max-width: 960px;
+}
+
+.Issue .Issue-avatar {
+  width: 64px;
+  height: 64px;
+}
+
+.Issue .Issue-comment-body {
+  word-break: break-all;
+}
+
+.Issue .Issue-title {
+  font-size: 22pt;
+}
+
+.Issue .Issue-anchor {
+  font-size: 22pt;
+  color: #999999;
+}
+
+.Issue .Issue-comments {
+  color: #666666;
+  font-size: 9pt;
+}

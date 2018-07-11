@@ -1,5 +1,4 @@
 button.Button {
-  color: #000000;
   font-size: 10pt;
 }
 
@@ -11,8 +10,13 @@ button.Button:hover, {
   color: #99cc33;
 }
 
+button.Button.null.btn.btn-link:hover, {
+  color: #99cc33;
+}
+
 button.Button.active {
   color: #000000;
+  font-weight: 600;
 }
 
 button.Button.inactive {

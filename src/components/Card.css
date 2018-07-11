@@ -1,17 +1,18 @@
-.Card-left {
+.Card .Card-left {
     width: 25px;
 }
 
-.Card-description {
+.Card .Card-title {
+    color: #000000;
+    font-size: 12pt;
+}
+
+.Card .Card-description {
     font-size: 13px;
     color: #bfbfbf;
 }
 
-.Card-chat {
+.Card .Card-chat {
     font-size: 12px;
     color: #999999;
-}
-
-.Card-label {
-    background: yellow;
 }

@@ -1,7 +1,16 @@
 .Header {
-    background-color: #fff;
+  background-color: #fff;
 }
 
-.HeaderLogo {
-    width: 115px;
+.Header .HeaderLogo {
+  width: 115px;
+}
+
+.Header .Header-logout {
+  color: #000000;
+}
+
+.Header .Header-logout:hover {
+  color: #99cc33;
+  text-decoration: none;
 }
