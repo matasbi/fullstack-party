@@ -142,18 +142,20 @@ class Issues extends Component {
   }
 
   renderPagination() {
-    const { repo, activePage } = this.state;
+    const { repo, activePage, repoState } = this.state;
 
     let pages = [];
 
-    const totalPages = Math.ceil(repo.total_open_count / 30);
+    const totalCount = repoState === 'open' ? repo.total_open_count : repo.total_closed_count;
+
+    const totalPages = Math.ceil(totalCount / 30);
     
     let _page = 0;
     for (let page = 1; page <= totalPages; page += 1) {
-      if (page !== 1 && page < activePage - 1) {
+      if (page !== 1 && page < activePage - 1 && page < totalPages - 3) {
         continue;
       }
-      if (pages.length > 3 && activePage + 1 < page && page < totalPages - 1) {
+      if (pages.length > 3 && activePage + 1 < page && page < totalPages) {
         continue;
       }
       if (_page !== page -1) {
