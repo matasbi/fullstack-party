@@ -23,7 +23,6 @@ yarn-error.log*
 yarn-error.log
 yarn.lock
 /.vscode
-.env
 package-lock.json
 src/styles/*.css
 /public/hot
@@ -34,3 +33,4 @@ src/styles/*.css
 /.vagrant
 Homestead.json
 Homestead.yaml
+composer.lock
