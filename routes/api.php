@@ -11,7 +11,9 @@ Route::middleware('throttle:60,1')->group(function () {
 
     Route::middleware('oauth')->group(function () {
         Route::get('/token', function () {
-            return session()->get('github_token');
+            return new DefaultResource(collect([
+                'token' => session()->get('github_token'),
+            ]));
         });
 
         Route::get('/repo', function () {

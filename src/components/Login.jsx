@@ -50,10 +50,13 @@ class Login extends Component {
     fetch(`${process.env.REACT_APP_API_URL}/token`, {
       credentials: 'include',
     })
-      .then(data => {
-        this.setState({
-          isAuth: true
-        });
+      .then((response) => response.json())
+      .then(response => {
+        if (response.data.token) {
+          this.setState({
+            isAuth: true
+          });
+        }
       })
       .catch(error => console.log(error));
   }
